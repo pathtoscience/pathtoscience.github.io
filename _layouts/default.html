@@ -1,31 +1,35 @@
----
-layout: compress
----
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
 
-{% include base_path %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ " /assets/css/style.css" | relative_url }}">
+</head>
 
-<!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
+<body>
 
-  <body>
+    <header>
+        <nav>
+            <a href="{{ " /" | relative_url }}" class="site-title">{{ site.title }}</a>
+            <div class="nav-links">
+                {% for item in site.navigation %}
+                <a href="{{ item.url | relative_url }}" {% if page.url==item.url %}class="active" {% endif %}>{{
+                    item.title }}</a>
+                {% endfor %}
+            </div>
+        </nav>
+    </header>
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+    <main class="container">
+        {{ content }}
+    </main>
 
-    {{ content }}
+    <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+    </footer>
 
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
-    </div>
+</body>
 
-    {% include scripts.html %}
-
-  </body>
 </html>

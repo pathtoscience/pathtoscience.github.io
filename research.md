@@ -1,38 +1,18 @@
 ---
-layout: archive
-title: "Research"
-permalink: /research/
-author_profile: true
+layout: default
+title: Research
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
+# Research Areas
 
-{% include base_path %}
+## 1. Stochastic Control
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+Investigating optimal control strategies in highly uncertain environments.
 
+## 2. Generative AI
 
+Building the next generation of generative models that are robust, explainable, and theoretically grounded.
 
+## 3. Web Development
 
-Sorry, no publications found.
+Exploring the intersection of modern web technologies and scientific visualization.
