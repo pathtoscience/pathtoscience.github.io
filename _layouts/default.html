@@ -10,25 +10,25 @@
 
 <body>
 
-    <header>
-        <nav>
-            <a href="{{ " /" | relative_url }}" class="site-title">{{ site.title }}</a>
-            <div class="nav-links">
+    <div class="wrapper">
+        <!-- Sidebar (Varoquaux Style) -->
+        <aside class="sidebar">
+            <h1 class="site-title"><a href="{{ " /" | relative_url }}">{{ site.title }}</a></h1>
+            <p class="description">{{ site.description }}</p>
+
+            <nav>
                 {% for item in site.navigation %}
                 <a href="{{ item.url | relative_url }}" {% if page.url==item.url %}class="active" {% endif %}>{{
                     item.title }}</a>
                 {% endfor %}
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </aside>
 
-    <main class="container">
-        {{ content }}
-    </main>
-
-    <footer>
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
-    </footer>
+        <!-- Main Content (Duvenaud Style) -->
+        <main class="content">
+            {{ content }}
+        </main>
+    </div>
 
 </body>
 

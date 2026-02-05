@@ -3,14 +3,27 @@ layout: default
 title: Home
 ---
 
-# Welcome to Spectral
+# Path to Spectral
 
-I am a researcher bridging the gap between **Stochastic Analysis**, **Control Theory**, and **Machine Learning**.
+**Bridging Stochastic Analysis, Control Theory, and Machine Learning.**
 
-## Current Focus
+I am a researcher focused on developing generative models that respect physical laws and mathematical constraints. My work aims to build the next generation of AI that is robust, explainable, and theoretically grounded.
 
-My work involves developing generative models that respect physical laws and mathematical constraints.
+---
 
-> "To see a World in a Grain of Sand..."
+## Latest News
 
-[Read my Research]({{ "/research/" | relative_url }}){: .btn }
+**Jan 2025**: New paper on *Spectrally Constrained Generative Models* accepted at ICLR 2025.
+
+**Jan 2025**: Released [SpectralGen](https://github.com/pathtoscience/spectral-gen), a Python library for spectral graph generation.
+
+**Dec 2024**: Giving a talk on *Stochastic Control in AI* at the University of Toronto.
+
+---
+
+## Research Highlights
+
+- **Stochastic Control**: Optimal strategies in uncertain environments.
+- **Generative AI**: Physics-informed machine learning.
+
+[View Publications]({{ "/publications/" | relative_url }})
