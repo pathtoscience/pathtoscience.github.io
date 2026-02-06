@@ -1,7 +1,7 @@
 title: Path to Spectral
 description: Research, AI, and Mathematics
 url: "https://pathtoscience.github.io"
-baseurl: ""
+baseurl: "/pathtospectral.github.io"
 theme: null
 
 markdown: kramdown
