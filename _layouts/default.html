@@ -22,12 +22,12 @@
             <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
             <p class="description">{{ site.description }}</p>
 
-            <nav>
-                {% for item in site.navigation %}
-                <a href="{{ item.url | relative_url }}" {% if page.url==item.url %}class="active" {% endif %}>{{
-                    item.title }}</a>
-                {% endfor %}
-            </nav>
+            <div class="theme-toggle-wrapper">
+                <button id="theme-toggle" class="theme-btn">
+                    <span id="theme-icon"><i class="fas fa-moon"></i></span>
+                    <span id="theme-text">Light Mode</span>
+                </button>
+            </div>
 
             <div class="social-links">
                 {% if site.social.scholar %}
@@ -39,16 +39,17 @@
                         class="fab fa-linkedin"></i></a>
                 {% endif %}
                 {% if site.social.x %}
-                <a href="{{ site.social.x }}" target="_blank" title="X (formely Twitter)"><i
-                        class="fab fa-x-twitter"></i></a>
+                <a href="{{ site.social.x }}" target="_blank" title="X (Twitter)"><i
+                        class="fa-brands fa-x-twitter"></i></a>
                 {% endif %}
             </div>
 
-            <div class="theme-toggle-wrapper">
-                <button id="theme-toggle" class="theme-btn">
-                    <span id="theme-text">Switch to Light Mode</span>
-                </button>
-            </div>
+            <nav>
+                {% for item in site.navigation %}
+                <a href="{{ item.url | relative_url }}" {% if page.url==item.url %}class="active" {% endif %}>{{
+                    item.title }}</a>
+                {% endfor %}
+            </nav>
         </aside>
 
         <!-- Main Content (Duvenaud Style) -->
@@ -58,27 +59,34 @@
     </div>
 
     <script>
-        const btn = document.getElementById('theme-toggle');
-        const themeText = document.getElementById('theme-text');
-        const currentTheme = localStorage.getItem('theme');
+        (function () {
+            const btn = document.getElementById('theme-toggle');
+            const themeText = document.getElementById('theme-text');
+            const themeIcon = document.getElementById('theme-icon');
+            const body = document.body;
 
-        if (currentTheme === 'light') {
-            document.body.classList.add('light-mode');
-            themeText.innerText = 'Switch to Dark Mode';
-        }
-
-        btn.addEventListener('click', function () {
-            document.body.classList.toggle('light-mode');
-
-            let theme = 'dark';
-            if (document.body.classList.contains('light-mode')) {
-                theme = 'light';
-                themeText.innerText = 'Switch to Dark Mode';
-            } else {
-                themeText.innerText = 'Switch to Light Mode';
+            function updateUI(isLight) {
+                if (isLight) {
+                    body.classList.add('light-mode');
+                    themeText.innerText = 'Dark Mode';
+                    themeIcon.innerHTML = '<i class="fas fa-sun"></i>';
+                } else {
+                    body.classList.remove('light-mode');
+                    themeText.innerText = 'Light Mode';
+                    themeIcon.innerHTML = '<i class="fas fa-moon"></i>';
+                }
             }
-            localStorage.setItem('theme', theme);
-        });
+
+            // Sync with local storage
+            const currentTheme = localStorage.getItem('theme');
+            updateUI(currentTheme === 'light');
+
+            btn.addEventListener('click', function () {
+                const isLight = !body.classList.contains('light-mode');
+                updateUI(isLight);
+                localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            });
+        })();
     </script>
 </body>
 
