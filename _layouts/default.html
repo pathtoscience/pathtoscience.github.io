@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -26,6 +28,21 @@
                     item.title }}</a>
                 {% endfor %}
             </nav>
+
+            <div class="social-links">
+                {% if site.social.scholar %}
+                <a href="{{ site.social.scholar }}" target="_blank" title="Google Scholar"><i
+                        class="fas fa-graduation-cap"></i></a>
+                {% endif %}
+                {% if site.social.linkedin %}
+                <a href="{{ site.social.linkedin }}" target="_blank" title="LinkedIn"><i
+                        class="fab fa-linkedin"></i></a>
+                {% endif %}
+                {% if site.social.x %}
+                <a href="{{ site.social.x }}" target="_blank" title="X (formely Twitter)"><i
+                        class="fab fa-x-twitter"></i></a>
+                {% endif %}
+            </div>
 
             <div class="theme-toggle-wrapper">
                 <button id="theme-toggle" class="theme-btn">

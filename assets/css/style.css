@@ -177,6 +177,26 @@ a:hover {
     transform: scale(1.05);
 }
 
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    border: none;
+    transition: all var(--transition-speed);
+}
+
+.social-links a:hover {
+    color: var(--accent-primary);
+    transform: translateY(-3px);
+}
+
 /* Theme Toggle */
 .theme-toggle-wrapper {
     margin-top: 2rem;
