@@ -34,7 +34,7 @@ I am a researcher specializing in the intersection of **stochastic control**, **
 ### [SpectralGen](https://github.com/pathtoscience/spectral-gen)
 A high-performance Python library for spectral graph analysis and generation. Built for researchers who need mathematical precision in graph-based generative tasks.
 
-<a href="/research/" class="btn">Explore All Research</a>
+<a href="{{ '/research/' | relative_url }}" class="btn">Explore All Research</a>
 
 ---
 
