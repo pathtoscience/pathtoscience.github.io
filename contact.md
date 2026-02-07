@@ -3,9 +3,10 @@ layout: default
 title: Contact
 ---
 
-# Get in Touch
-
-I am always open to discussing new research collaborations and opportunities.
+<div style="text-align: center; margin-bottom: 2rem;">
+    <h1>Get in Touch</h1>
+    <p>I am always open to discussing new research collaborations and opportunities.</p>
+</div>
 
 <form action="https://formspree.io/f/your-form-id" method="POST">
     <div class="form-group">
