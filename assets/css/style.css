@@ -204,14 +204,16 @@ a:hover {
 }
 
 .social-links a {
-    font-size: 1.4rem;
-    color: var(--text-muted);
-    transition: color var(--transition-speed), transform var(--transition-speed);
+    font-size: 1.5rem;
+    color: var(--text-main);
+    opacity: 0.7;
+    transition: all var(--transition-speed) cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .social-links a:hover {
     color: var(--accent-primary);
-    transform: translateY(-4px);
+    transform: translateY(-5px) scale(1.1);
+    opacity: 1;
 }
 
 /* Navigation */
@@ -250,15 +252,12 @@ a:hover {
     max-width: var(--width-content);
 }
 
-/* Cards / Post Items */
-.post-item {
-    background: var(--bg-card);
-    backdrop-filter: var(--glass-blur);
-    padding: 2.5rem;
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-subtle);
-    margin-bottom: 2.5rem;
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s;
+/* Post List Styling */
+.post-list {
+    list-style: none;
+    /* Remove any default bullets/dots */
+    padding: 0;
+    margin: 0;
 }
 
 .post-item:hover {
@@ -288,12 +287,76 @@ a:hover {
     font-family: 'Outfit', sans-serif;
     box-shadow: 0 10px 20px var(--accent-glow);
     transition: all var(--transition-speed);
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
     transform: scale(1.05) translateY(-3px);
     box-shadow: 0 15px 30px var(--accent-glow);
     color: white;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: var(--bg-card);
+    backdrop-filter: var(--glass-blur);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-subtle);
+    margin-top: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+form label {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-headers);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 1.1rem 1.4rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    color: var(--text-main);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all var(--transition-speed);
+}
+
+body.light-mode form input,
+body.light-mode form textarea {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 4px var(--accent-glow);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+body.light-mode form input:focus,
+body.light-mode form textarea:focus {
+    background: white;
+    border-color: var(--accent-primary);
 }
 
 /* Mobile Responsive */
